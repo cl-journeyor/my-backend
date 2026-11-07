@@ -1,0 +1,8 @@
+{:source-paths ["src"]
+ :dependencies [[binaryage/devtools "1.0.6"]
+                [nrepl "1.0.0"]]
+ :builds       {:app {:target    :node-script
+                      :main      my-backend.core/main
+                      :output-to "public/js/index.js"
+                      :devtools  {:before-load-async my-backend.core/stop
+                                  :after-load my-backend.core/start}}}}
